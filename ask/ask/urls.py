@@ -19,12 +19,20 @@ from django.urls import path
 from qa import views ### То ли я добавил?
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.test,),
-    path('login/', views.test, name='login'),
-    path('signup/', views.test, name='signup'),
-    path('question/<int:id>/', views.test, name='question'),
-    path('ask/', views.test, name='ask'),
-    path('popular/', views.test, name='popular'),
-    path('new/', views.test, name='new')
+    # path('admin/', admin.site.urls),
+    # path('', views.test,),
+    # path('login/', views.test, name='login'),
+    # path('signup/', views.test, name='signup'),
+    # path('question/<int:id>/', views.test, name='question'),
+    # path('ask/', views.test, name='ask'),
+    # path('popular/', views.test, name='popular'),
+    # path('new/', views.test, name='new')
+
+    url(r'^$', test, name='question_list'),
+    url(r'^question/(?P<pk>\d+)/', test, name='question'),
+    url(r'^popular/', test, name='popular'),
+    url(r'^ask/', test, name='ask'),
+    url(r'^signup/', test, name='signup'),
+    url(r'^login/', test, name='login'),
+    url(r'^new/', test, name='new')
 ]
